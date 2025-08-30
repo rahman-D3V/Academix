@@ -1,5 +1,12 @@
+
+
+import { role } from "@/app/lib/data";
+import { log } from "console";
 import Image from "next/image";
 import Link from "next/link";
+
+
+
 
 const menuItems = [
   {
@@ -125,16 +132,18 @@ const Menu = () => {
             {i.title}
           </span>
           {i.items.map((item) => {
-            return (
+            if(item.visible.includes(role)){
+              return (
               <Link
                 href={item.href}
                 key={item.label}
-                className="flex items-center justify-center lg:justify-start gap-4 text-gray-500 py-2 md:px-2 rounded-md hover:bg-lamaSkyLight"
+                className="flex hover:bg-[#EDF9FD]  items-center justify-center lg:justify-start gap-4 text-gray-500 py-2 md:px-2 rounded-md hover:bg-lamaSkyLight"
               >
                 <Image src={item.icon} alt="" width={20} height={20} />
                 <span className="hidden lg:block">{item.label}</span>
               </Link>
             );
+            }
           })}
         </div>
       ))}
