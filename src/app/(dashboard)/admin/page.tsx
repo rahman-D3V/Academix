@@ -1,16 +1,24 @@
 // import Announcements from "@/components/Announcements";
 // import EventCalendar from "@/components/EventCalendar";
 import Announcements from "@/components/Announcements";
-import AttendanceChart from "@/components/AttendanceChart";
+// import AttendanceChart from "@/components/AttendanceChart";
 import CalendarComp from "@/components/Calender";
 import CountChart from "@/components/CountChart";
 import FinanceChart from "@/components/FinanceChart";
 import UserCard from "@/components/UserCard";
+import dynamic from "next/dynamic";
 import Calendar from "react-calendar";
 import 'react-calendar/dist/Calendar.css';
 
 
+const AttendanceChart = dynamic(() => import('@/components/AttendanceChart'),{
+  loading: () => <p className="bg-red-500">Loading...</p>
+})
+
 const AdminPage = () => {
+
+    
+
   return (
     <div className="p-4 flex gap-4 flex-col md:flex-row">
 

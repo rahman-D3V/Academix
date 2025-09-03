@@ -1,9 +1,11 @@
 
 
-import { role } from "@/app/lib/data";
+// import { role } from "@/app/lib/data";
+role
 import { log } from "console";
 import Image from "next/image";
 import Link from "next/link";
+import { role } from "../app/lib/data";
 
 
 
